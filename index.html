@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vuplicity MVP — Executive Status Snapshot</title>
+  <meta name="description" content="Clear, static MVP status: what's done, impact, current status, what's next, and risks." />
+  <meta name="color-scheme" content="light dark" />
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+  <style>
+    :root { --bg:#0f1115; --panel:#151922; --panel-2:#1b2130; --text:#e8eefc; --muted:#9fb0d9; --brand:#6ea8fe; --brand-2:#9ad1ff; --ok:#3ccf91; --warn:#f6c56b; --risk:#ff7a7a; --border:#243049; --shadow:0 6px 24px rgba(0,0,0,.25), 0 2px 6px rgba(0,0,0,.2); }
+    @media (prefers-color-scheme: light){ :root { --bg:#f7f9fc; --panel:#fff; --panel-2:#f3f6fb; --text:#0f172a; --muted:#475569; --brand:#1e66ff; --brand-2:#4ea8ff; --ok:#12b886; --warn:#f59f00; --risk:#e03131; --border:#e6ebf5; --shadow:0 6px 24px rgba(2,6,23,.08),0 2px 6px rgba(2,6,23,.06);} }
+    html,body{height:100%} body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Inter,"Helvetica Neue",Arial}
+    .wrap{max-width:1120px;margin:0 auto;padding:26px}
+    header.hero{background:linear-gradient(180deg,var(--panel),var(--panel));border-bottom:1px solid var(--border);box-shadow:var(--shadow)}
+    .hero .wrap{padding:26px}
+    .title{font-size:clamp(24px,2.8vw,36px);margin:0 0 6px}
+    .subtitle{color:var(--muted);margin:0;font-size:13px}
+    .kpis{display:grid;gap:12px;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:14px}
+    @media(max-width:900px){.kpis{grid-template-columns:1fr 1fr}}
+    @media(max-width:560px){.kpis{grid-template-columns:1fr}}
+    .kpi{background:var(--panel-2);border:1px solid var(--border);border-radius:14px;padding:14px;box-shadow:var(--shadow)}
+    .kpi h4{margin:0 0 6px;color:var(--muted);font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+    .kpi .num{font-size:clamp(20px,3.6vw,30px);font-weight:800}
+    .pill{display:inline-block;font-size:12px;padding:4px 10px;border-radius:999px;border:1px solid var(--border)}
+    .ontrack{background:color-mix(in srgb, var(--ok) 18%, transparent);color:#0a5138}
+    main{padding-top:18px}
+    section{margin:22px 0}
+    .card{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:18px;box-shadow:var(--shadow)}
+    .card h2{font-size:18px;margin:2px 0 12px}
+    .muted{color:var(--muted)}
+    .twocol{display:grid;gap:14px;grid-template-columns:1fr 1fr}
+    @media(max-width:900px){.twocol{grid-template-columns:1fr}}
+    .col{background:var(--panel-2);border:1px solid var(--border);border-radius:12px;padding:14px}
+    .col h3{margin:0 0 8px;font-size:15px}
+    ul{margin:0;padding-left:18px}
+    li{margin:8px 0}
+    .bars{display:grid;gap:12px}
+    .bar{background:var(--panel-2);border:1px solid var(--border);border-radius:999px;height:16px;position:relative}
+    .bar .fill{position:absolute;left:0;top:0;height:100%;background:linear-gradient(90deg,var(--brand),var(--brand-2));border-radius:999px}
+    .bar .label{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;color:var(--muted);font-size:13px}
+    .list{display:grid;gap:10px}
+    .item{background:var(--panel-2);border:1px solid var(--border);border-radius:12px;padding:12px}
+    footer{border-top:1px solid var(--border);margin-top:24px;padding-top:14px;color:var(--muted)}
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <h1 class="title">Vuplicity MVP — Executive Status Snapshot</h1>
+      <p class="subtitle">As of 2025‑08‑07 • Links: <a href="https://github.com/Vuplicity/vuplicity-api">API</a> · <a href="https://github.com/Vuplicity/vuplicity-hr-portal">HR</a> · <a href="https://github.com/Vuplicity/vuplicity-employee-portal">Employee</a></p>
+      <div class="kpis">
+        <div class="kpi"><h4>Overall status</h4><div class="num"><span class="pill ontrack">On Track</span></div></div>
+        <div class="kpi"><h4>MVP ETA</h4><div class="num">4–6 weeks</div></div>
+        <div class="kpi"><h4>Completed items</h4><div class="num">6</div></div>
+        <div class="kpi"><h4>Remaining items</h4><div class="num">5</div></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="card">
+      <h2>Executive summary</h2>
+      <p class="summary">Core platform foundations are in place across backend (serverless API), data (Supabase), and portals (HR operational; employee scaffolded). Compliance is deterministic and auditable. The remaining work focuses on end‑to‑end background check orchestration (InformData), consent/PII controls, report viewing, and operational readiness. We estimate 4–6 weeks to MVP with current scope and guardrails.</p>
+    </section>
+
+    <section class="card">
+      <h2>Completed (to‑date) → Impact</h2>
+      <div class="twocol">
+        <div class="col">
+          <h3>Completed</h3>
+          <ul>
+            <li>API refactor to Vercel serverless</li>
+            <li>Deterministic compliance matrix</li>
+            <li>InformData adapter integrated</li>
+            <li>Supabase schema cleanup</li>
+            <li>HR portal core flows live</li>
+            <li>Employee portal scaffolded</li>
+          </ul>
+        </div>
+        <div class="col">
+          <h3>Impact</h3>
+          <ul>
+            <li>Scalable backend; lower ops overhead</li>
+            <li>Auditable, lower‑risk decisions</li>
+            <li>Real data path to normalized reports</li>
+            <li>Lean model; reduced complexity/cost</li>
+            <li>HR initiation/status unblocked</li>
+            <li>Faster candidate consent integration</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Remaining (to‑MVP) → Why it matters</h2>
+      <div class="twocol">
+        <div class="col">
+          <h3>Remaining</h3>
+          <ul>
+            <li>InformData E2E: webhooks, retries (DLQ/replay), normalization → report</li>
+            <li>Consent lifecycle + PII controls (encryption, RLS, audit)</li>
+            <li>HR report viewer (status → report, empty/error), RBAC</li>
+            <li>Employee consent E2E + auth + report access</li>
+            <li>Ops readiness: CI checks, metrics/logging, seed data</li>
+          </ul>
+        </div>
+        <div class="col">
+          <h3>Why</h3>
+          <ul>
+            <li>Reliable intake → normalized output → usable reports</li>
+            <li>Compliance and trust for sensitive data</li>
+            <li>Employer‑visible outcomes; supportability</li>
+            <li>Candidate experience; legal consent chain</li>
+            <li>Stable releases; observability; faster QA</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Current status by component</h2>
+      <div class="bars">
+        <div>
+          <div class="bar">
+            <div class="label"><span>Backend (API) readiness</span><span>~33%</span></div>
+            <div class="fill" style="width:33%"></div>
+          </div>
+        </div>
+        <div>
+          <div class="bar">
+            <div class="label"><span>HR portal readiness</span><span>~29%</span></div>
+            <div class="fill" style="width:29%"></div>
+          </div>
+        </div>
+        <div>
+          <div class="bar">
+            <div class="label"><span>Employee portal readiness</span><span>~17%</span></div>
+            <div class="fill" style="width:17%"></div>
+          </div>
+        </div>
+      </div>
+      <p class="muted" style="margin-top:8px;font-size:12px">Readiness reflects functional coverage for MVP scope (not complexity‑weighted).</p>
+    </section>
+
+    <section class="card">
+      <h2>Scope decisions</h2>
+      <div class="list">
+        <div class="item"><strong>In MVP:</strong> deterministic compliance; consent + audit; single/basic multi‑package checks; HR status + reports; candidate auth + reports</div>
+        <div class="item"><strong>Deferred:</strong> granular billing/invoicing</div>
+        <div class="item"><strong>Not planned:</strong> AI scoring/explanations; advanced analytics/exports; complex cross‑jurisdiction bundles</div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Key risks → Mitigations</h2>
+      <div class="twocol">
+        <div class="col">
+          <h3>Risks</h3>
+          <ul>
+            <li>PII protection & audit coverage</li>
+            <li>Webhook reliability</li>
+            <li>Scope creep</li>
+          </ul>
+        </div>
+        <div class="col">
+          <h3>Mitigations</h3>
+          <ul>
+            <li>Field‑level encryption; strict RLS; append‑only logs</li>
+            <li>Idempotency; retries; DLQ + replay tooling</li>
+            <li>Guardrails: deterministic only; AI not planned</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    <p class="muted" style="font-size:12px">© Vuplicity — internal MVP snapshot. Static view (no live updates).</p>
+  </footer>
+</body>
+</html>
