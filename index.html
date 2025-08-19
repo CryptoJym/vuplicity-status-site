@@ -48,12 +48,12 @@
   <header class="hero">
     <div class="wrap">
       <h1 class="title">Vuplicity MVP — Executive Status Snapshot</h1>
-      <p class="subtitle">As of 2025‑08‑07 • Links: <a href="https://github.com/Vuplicity/vuplicity-api">API</a> · <a href="https://github.com/Vuplicity/vuplicity-hr-portal">HR</a> · <a href="https://github.com/Vuplicity/vuplicity-employee-portal">Employee</a></p>
+      <p class="subtitle">As of 2025‑08‑19 • Links: <a href="https://github.com/Vuplicity/vuplicity-api">API</a> · <a href="https://github.com/Vuplicity/vuplicity-hr-portal">HR</a> · <a href="https://github.com/Vuplicity/vuplicity-employee-portal">Employee</a></p>
       <div class="kpis">
-        <div class="kpi"><h4>Overall status</h4><div class="num"><span class="pill ontrack">On Track</span></div></div>
+        <div class="kpi"><h4>Overall status</h4><div class="num"><span class="pill ontrack">In Development</span></div></div>
         <div class="kpi"><h4>MVP ETA</h4><div class="num">4–6 weeks</div></div>
-        <div class="kpi"><h4>Completed items</h4><div class="num">6</div></div>
-        <div class="kpi"><h4>Remaining items</h4><div class="num">5</div></div>
+        <div class="kpi"><h4>Completed items</h4><div class="num">8</div></div>
+        <div class="kpi"><h4>Remaining items</h4><div class="num">6</div></div>
       </div>
     </div>
   </header>
@@ -61,7 +61,7 @@
   <main class="wrap">
     <section class="card">
       <h2>Executive summary</h2>
-      <p class="summary">Core platform foundations are in place across backend (serverless API), data (Supabase), and portals (HR operational; employee scaffolded). Compliance is deterministic and auditable. The remaining work focuses on end‑to‑end background check orchestration (InformData), consent/PII controls, report viewing, and operational readiness. We estimate 4–6 weeks to MVP with current scope and guardrails.</p>
+      <p class="summary">The project remains actively in development. Multi‑order orchestration and compliant filtering are complete, the HR portal is standardized and tested, and the compliance matrix currently covers 532 jurisdictions. Focus now shifts to running the backfill and RLS migrations, expanding matrix coverage, validating the report converter end‑to‑end, and delivering candidate‑facing flows in the employee portal.</p>
     </section>
 
     <section class="card">
@@ -70,23 +70,24 @@
         <div class="col">
           <h3>Completed</h3>
           <ul>
-            <li>API refactor to Vercel serverless</li>
-            <li>Deterministic compliance matrix</li>
+            <li>Multi‑order orchestration implemented</li>
+            <li>Deterministic compliance filtering integrated</li>
+            <li>HR portal standardized and tested</li>
             <li>InformData adapter integrated</li>
-            <li>Supabase schema cleanup</li>
-            <li>HR portal core flows live</li>
+            <li>Supabase schema + RLS improvements</li>
+            <li>Compliance matrix coverage: 532 jurisdictions</li>
+            <li>API refactor to Vercel serverless</li>
             <li>Employee portal scaffolded</li>
           </ul>
         </div>
         <div class="col">
           <h3>Impact</h3>
           <ul>
-            <li>Scalable backend; lower ops overhead</li>
-            <li>Auditable, lower‑risk decisions</li>
+            <li>Deterministic, auditable decisioning path</li>
+            <li>Operational HR flows unblocked</li>
+            <li>Scalable backend with lower ops overhead</li>
             <li>Real data path to normalized reports</li>
-            <li>Lean model; reduced complexity/cost</li>
-            <li>HR initiation/status unblocked</li>
-            <li>Faster candidate consent integration</li>
+            <li>Stronger data protections via RLS and auditability</li>
           </ul>
         </div>
       </div>
@@ -98,21 +99,22 @@
         <div class="col">
           <h3>Remaining</h3>
           <ul>
-            <li>InformData E2E: webhooks, retries (DLQ/replay), normalization → report</li>
-            <li>Consent lifecycle + PII controls (encryption, RLS, audit)</li>
-            <li>HR report viewer (status → report, empty/error), RBAC</li>
-            <li>Employee consent E2E + auth + report access</li>
-            <li>Ops readiness: CI checks, metrics/logging, seed data</li>
+            <li>Run backfill; finalize RLS migrations; seed data</li>
+            <li>Expand compliance matrix coverage; validate cross‑state edges</li>
+            <li>Normalize and validate report converter end‑to‑end</li>
+            <li>Employee portal candidate‑facing flows (consent, auth, report access)</li>
+            <li>HR report viewer (empty/error states) and RBAC</li>
+            <li>Webhook reliability: retries, DLQ/replay instrumentation</li>
           </ul>
         </div>
         <div class="col">
           <h3>Why</h3>
           <ul>
-            <li>Reliable intake → normalized output → usable reports</li>
-            <li>Compliance and trust for sensitive data</li>
+            <li>Trustworthy intake → normalized output → usable reports</li>
+            <li>Compliance for sensitive PII with clear audit chain</li>
             <li>Employer‑visible outcomes; supportability</li>
-            <li>Candidate experience; legal consent chain</li>
-            <li>Stable releases; observability; faster QA</li>
+            <li>Candidate experience; legal consent requirements</li>
+            <li>Stable releases with observability for faster QA</li>
           </ul>
         </div>
       </div>
@@ -123,20 +125,26 @@
       <div class="bars">
         <div>
           <div class="bar">
-            <div class="label"><span>Backend (API) readiness</span><span>~33%</span></div>
-            <div class="fill" style="width:33%"></div>
+            <div class="label"><span>Backend (API) readiness</span><span>~60%</span></div>
+            <div class="fill" style="width:60%"></div>
           </div>
         </div>
         <div>
           <div class="bar">
-            <div class="label"><span>HR portal readiness</span><span>~29%</span></div>
-            <div class="fill" style="width:29%"></div>
+            <div class="label"><span>HR portal readiness</span><span>~85%</span></div>
+            <div class="fill" style="width:85%"></div>
           </div>
         </div>
         <div>
           <div class="bar">
-            <div class="label"><span>Employee portal readiness</span><span>~17%</span></div>
-            <div class="fill" style="width:17%"></div>
+            <div class="label"><span>Employee portal readiness</span><span>~20%</span></div>
+            <div class="fill" style="width:20%"></div>
+          </div>
+        </div>
+        <div>
+          <div class="bar">
+            <div class="label"><span>Compliance matrix coverage</span><span>~50%</span></div>
+            <div class="fill" style="width:50%"></div>
           </div>
         </div>
       </div>
@@ -149,6 +157,28 @@
         <div class="item"><strong>In MVP:</strong> deterministic compliance; consent + audit; single/basic multi‑package checks; HR status + reports; candidate auth + reports</div>
         <div class="item"><strong>Deferred:</strong> granular billing/invoicing</div>
         <div class="item"><strong>Not planned:</strong> AI scoring/explanations; advanced analytics/exports; complex cross‑jurisdiction bundles</div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Status Update — Aug 19, 2025</h2>
+      <div class="twocol">
+        <div class="col">
+          <h3>Highlights</h3>
+          <ul>
+            <li>Multi‑order orchestration and compliance filtering completed</li>
+            <li>HR portal standardized and tested</li>
+            <li>Compliance matrix at 532 jurisdictions</li>
+          </ul>
+        </div>
+        <div class="col">
+          <h3>Next actions</h3>
+          <ul>
+            <li>Run backfill; complete RLS migrations</li>
+            <li>Expand matrix coverage; validate report converter</li>
+            <li>Deliver candidate‑facing flows (employee portal)</li>
+          </ul>
+        </div>
       </div>
     </section>
 
